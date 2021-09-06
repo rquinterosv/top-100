@@ -1,3 +1,5 @@
+-- pregunta 1 
+
 DROP TABLE IF EXISTS reparto;
 DROP TABLE IF EXISTS peliculas; 
 
@@ -18,3 +20,20 @@ CREATE TABLE reparto (
 );
 
 \copy reparto FROM 'reparto.csv' csv; 
+
+-- Pregunta 2
+
+SELECT * FROM peliculas;
+SELECT * FROM reparto;
+
+-- pregunta3
+
+SELECT id FROM peliculas WHERE pelicula= 'Titanic';
+
+-- pregunta 4
+
+
+SELECT actor, peliculas FROM reparto, peliculas WHERE pelicula= 'Titanic' and id_pelicula=2; 
+
+-- pregunta 5
+SELECT pelicula, actor FROM peliculas, reparto WHERE actor= 'Harrison Ford';
