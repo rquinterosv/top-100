@@ -36,4 +36,14 @@ SELECT id FROM peliculas WHERE pelicula= 'Titanic';
 SELECT actor, peliculas FROM reparto, peliculas WHERE pelicula= 'Titanic' and id_pelicula=2; 
 
 -- pregunta 5
-SELECT pelicula, actor FROM peliculas, reparto WHERE actor= 'Harrison Ford';
+SELECT COUNT(pelicula) FROM peliculas, reparto WHERE actor= 'Harrison Ford' and id=id_pelicula;
+SELECT actor FROM reparto WHERE actor= 'Harrison Ford';
+
+--pregunta 6
+SELECT pelicula, año_estreno FROM peliculas WHERE año_estreno <= '1999' and año_estreno >= 1990 ORDER BY año_estreno DESC;
+
+-- pregunta 7 (considerar que el espacio cuenta)
+SELECT pelicula, LENGTH(pelicula) AS longitud_titulo FROM peliculas;
+
+-- pregunta 8
+SELECT pelicula, LENGTH(pelicula) AS longitud_titulo FROM peliculas ORDER BY longitud_titulo ASC LIMIT(1); 
